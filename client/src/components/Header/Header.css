@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header a {
+  display: inline-block;
+  padding: 0.5em;
+  margin: 1em;
+}
