@@ -1,8 +1,8 @@
-# React Redux Auth
+#React Redux Auth
 
 This code was written for learning purposes.
 
-### Links
+###Links
 
 - [reqres.in](https://reqres.in/) - A hosted REST-API ready to respond to your AJAX requests
 - [Organizing Redux Application](https://jaysoo.ca/2016/02/28/organizing-redux-application/) - A must read about these topic
