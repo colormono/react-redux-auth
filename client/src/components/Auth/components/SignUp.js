@@ -15,8 +15,8 @@ class SignUp extends React.Component {
     const { handleSubmit } = this.props; // provided by redux-form
 
     return (
-      <form onSubmit={handleSubmit(this.onSubmit)}>
-        <fieldset>
+      <form onSubmit={handleSubmit(this.onSubmit)} className="ui form">
+        <div className="field">
           <label>Email</label>
           <Field
             name="email"
@@ -24,15 +24,17 @@ class SignUp extends React.Component {
             component="input"
             autoComplete="none"
           />
-        </fieldset>
-        <fieldset>
+        </div>
+        <div className="field">
           <label>Password</label>
           <Field name="password" type="password" component="input" />
-        </fieldset>
+        </div>
         <div>{this.props.errorMessage}</div>
-        <fieldset>
-          <button type="submit">Sign Up</button>
-        </fieldset>
+        <div className="field">
+          <button type="submit" className="ui button">
+            Sign Up
+          </button>
+        </div>
       </form>
     );
   }

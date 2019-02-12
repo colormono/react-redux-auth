@@ -7,24 +7,34 @@ class Header extends React.Component {
   renderLinks() {
     if (this.props.authenticated) {
       return (
-        <div>
-          <Link to="/signout">Sign Out</Link>
-          <Link to="/features">Features</Link>
+        <div className="right menu">
+          <Link to="/signout" className="item">
+            Sign Out
+          </Link>
+          <Link to="/features" className="item">
+            Features
+          </Link>
         </div>
       );
     } else {
       return (
-        <div>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/signin">Sign In</Link>
+        <div className="right menu">
+          <Link to="/signup" className="item">
+            Sign Up
+          </Link>
+          <Link to="/signin" className="item">
+            Sign In
+          </Link>
         </div>
       );
     }
   }
   render() {
     return (
-      <header className="header">
-        <Link to="/">Redux Auth</Link>
+      <header className="ui secondary menu">
+        <Link to="/" className="item active">
+          Redux Auth
+        </Link>
         {this.renderLinks()}
       </header>
     );
