@@ -4,7 +4,7 @@ export default function signOut() {
   localStorage.removeItem('token');
 
   return {
-    type: t.USER,
+    type: t.SIGN_OUT,
     payload: ''
   };
 }

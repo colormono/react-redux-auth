@@ -1,16 +1,34 @@
 import * as t from './actionTypes';
 
 const INITIAL_STATE = {
-  authenticated: '',
-  errorMessage: ''
+  isSignedIn: null,
+  loginWith: null,
+  errorMessage: '',
+  user: {
+    id: null,
+    email: null,
+    token: ''
+  }
 };
 
 export default function(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case t.USER:
-      return { ...state, authenticated: action.payload, errorMessage: '' };
+    case t.SIGN_IN:
+      return {
+        ...state,
+        isSignedIn: true,
+        user: action.payload,
+        errorMessage: ''
+      };
+    case t.SIGN_OUT:
+      return {
+        ...state,
+        isSignedIn: false,
+        user: INITIAL_STATE.user,
+        errorMessage: ''
+      };
     case t.ERROR:
-      return { ...state, errorMessage: action.payload };
+      return { ...state, isSignedIn: false, errorMessage: action.payload };
     default:
       return state;
   }

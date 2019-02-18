@@ -9,9 +9,20 @@ export default function signIn(formProps, callback) {
         password: formProps.password
       });
 
+      const payload = {
+        id: '',
+        email: formProps.email,
+        token: resp.data.token
+      };
+
+      dispatch({
+        type: t.SIGN_IN,
+        payload: payload
+      });
+
       dispatch({
         type: t.USER,
-        payload: resp.data.token
+        payload: payload
       });
 
       localStorage.setItem('token', resp.data.token);

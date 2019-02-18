@@ -5,7 +5,7 @@ import './Header.css';
 
 class Header extends React.Component {
   renderLinks() {
-    if (this.props.authenticated) {
+    if (this.props.isSignedIn) {
       return (
         <div className="right menu">
           <Link to="/signout" className="item">
@@ -43,7 +43,7 @@ class Header extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    authenticated: state.auth.authenticated
+    isSignedIn: state.auth.isSignedIn
   };
 };
 
