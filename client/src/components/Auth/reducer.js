@@ -2,12 +2,12 @@ import * as t from './actionTypes';
 
 const INITIAL_STATE = {
   isSignedIn: null,
-  loginWith: null,
   errorMessage: '',
   user: {
     id: null,
     email: null,
-    token: ''
+    token: '',
+    signedWith: null
   }
 };
 

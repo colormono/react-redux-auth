@@ -9,23 +9,19 @@ export default function signIn(formProps, callback) {
         password: formProps.password
       });
 
-      const payload = {
+      const user = {
         id: '',
         email: formProps.email,
-        token: resp.data.token
+        token: resp.data.token,
+        signedWith: 'email'
       };
 
       dispatch({
         type: t.SIGN_IN,
-        payload: payload
+        payload: user
       });
 
-      dispatch({
-        type: t.USER,
-        payload: payload
-      });
-
-      localStorage.setItem('token', resp.data.token);
+      localStorage.setItem('currentUser', JSON.stringify(user));
 
       callback();
     } catch (e) {

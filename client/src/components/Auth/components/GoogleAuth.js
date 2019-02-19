@@ -25,7 +25,7 @@ class GoogleAuth extends React.Component {
         .get()
         .getBasicProfile()
         .getEmail();
-      this.props.signInWithGoogle({ userId, userEmail });
+      this.props.signInWithGoogle({ userId, userEmail }, this.props.cb);
     } else {
       this.props.signOut();
     }

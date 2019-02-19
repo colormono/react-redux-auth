@@ -3,20 +3,21 @@ import * as t from '../actionTypes';
 export default function signInWithGoogle(props, callback) {
   return async (dispatch, getState) => {
     try {
-      const payload = {
+      const user = {
         id: props.userId,
         email: props.userEmail,
-        token: props.userEmail
+        token: props.userEmail,
+        signedWith: 'google'
       };
 
       dispatch({
         type: t.SIGN_IN,
-        payload: payload
+        payload: user
       });
 
-      localStorage.setItem('token', props.userEmail);
+      localStorage.setItem('currentUser', JSON.stringify(user));
 
-      //callback();
+      callback();
     } catch (e) {
       dispatch({
         type: t.ERROR,

@@ -17,10 +17,13 @@ const SignupSchema = Yup.object().shape({
 
 class SignIn extends React.Component {
   onSubmit = formProps => {
-    console.log(formProps);
     this.props.handleFormSubmit(formProps, () => {
-      this.props.history.push('/features');
+      this.redirectTo('/features');
     });
+  };
+
+  redirectTo = page => {
+    this.props.history.push(page);
   };
 
   render() {
@@ -60,7 +63,7 @@ class SignIn extends React.Component {
           )}
         />
         <div className="ui horizontal divider">Or</div>
-        <GoogleAuth />
+        <GoogleAuth cb={() => this.redirectTo('/features')} />
       </div>
     );
   }

@@ -2,9 +2,12 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
 
+const currentUser = localStorage.getItem('currentUser');
+
 const preloadedState = {
   auth: {
-    authenticated: localStorage.getItem('token')
+    isSignedIn: currentUser ? true : false,
+    user: currentUser ? JSON.parse(currentUser) : null
   }
 };
 
