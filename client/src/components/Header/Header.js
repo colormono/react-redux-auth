@@ -8,11 +8,14 @@ class Header extends React.Component {
     if (this.props.isSignedIn) {
       return (
         <div className="right menu">
-          <Link to="/signout" className="item">
-            Sign Out
-          </Link>
           <Link to="/features" className="item">
             Features
+          </Link>
+          <Link to="/streams/create" className="item">
+            Create Stream
+          </Link>
+          <Link to="/signout" className="item">
+            Sign Out
           </Link>
         </div>
       );

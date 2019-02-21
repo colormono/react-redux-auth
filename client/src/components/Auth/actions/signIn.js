@@ -10,7 +10,7 @@ export default function signIn(formProps, callback) {
       });
 
       const user = {
-        id: '',
+        id: formProps.email,
         email: formProps.email,
         token: resp.data.token,
         signedWith: 'email'
