@@ -10,6 +10,6 @@ export default function deleteStream(id, callback) {
       payload: id
     });
 
-    callback();
+    if (callback) callback();
   };
 }

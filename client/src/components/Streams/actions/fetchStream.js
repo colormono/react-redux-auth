@@ -10,6 +10,6 @@ export default function fetchStream(id, callback) {
       payload: response.data
     });
 
-    callback();
+    if (callback) callback();
   };
 }

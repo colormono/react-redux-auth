@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
+import history from './history';
 import { Provider } from 'react-redux';
 import store from './store';
 
 import { App, Welcome, Features } from './components/App';
 import { SignUp, SignIn, SignOut } from './components/Auth';
-import { CreateStream, StreamList } from './components/Streams';
+import { StreamList, CreateStream, EditStream } from './components/Streams';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <Router history={history}>
       <App>
         <Route path="/" exact component={Welcome} />
         <Route path="/signup" component={SignUp} />
@@ -19,6 +20,7 @@ ReactDOM.render(
         <Route path="/features" component={Features} />
         <Route path="/streams" exact component={StreamList} />
         <Route path="/streams/create" component={CreateStream} />
+        <Route path="/streams/edit/:id" exact component={EditStream} />
       </App>
     </Router>
   </Provider>,
