@@ -7,7 +7,12 @@ import store from './store';
 
 import { App, Welcome, Features } from './components/App';
 import { SignUp, SignIn, SignOut } from './components/Auth';
-import { StreamList, CreateStream, EditStream } from './components/Streams';
+import {
+  StreamList,
+  CreateStream,
+  EditStream,
+  DeleteStream
+} from './components/Streams';
 
 ReactDOM.render(
   <Provider store={store}>
@@ -21,6 +26,7 @@ ReactDOM.render(
         <Route path="/streams" exact component={StreamList} />
         <Route path="/streams/create" component={CreateStream} />
         <Route path="/streams/edit/:id" exact component={EditStream} />
+        <Route path="/streams/delete/:id" exact component={DeleteStream} />
       </App>
     </Router>
   </Provider>,
